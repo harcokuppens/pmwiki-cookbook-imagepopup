@@ -1,0 +1,31 @@
+{
+  //  
+  // open project from folder in vscode with command 
+  //    'Dev Containers: Open folder in Container...'
+  // or from command line when in folder:
+  //    code . 
+  //
+  // docs: https://containers.dev/implementors/json_reference/
+  "name": "pmwiki-basic",
+  "dockerComposeFile": ["./docker-compose.yml"],
+  "service": "pmwiki",
+  "shutdownAction": "none", // the supporting tools do not stop the containers when the related tool window is closed / shut down
+  
+  // Open the sub-folder with the source code
+  "workspaceFolder": "/var/www/html/pmwiki",
+  //
+  //NOTE:  "workspaceMount" not used for docker-compose, instead use "mounts"
+  // "mounts": [{ "source": "${localWorkspaceFolder}/wiki.d/", "target": "/var/www/html/pmwiki/wiki.d/", "type": "bind" },
+  //            { "source": "${localWorkspaceFolder}/uploads/", "target": "/var/www/html/pmwiki/uploads/", "type": "bind" },
+  //            { "source": "${localWorkspaceFolder}/local/", "target": "/var/www/html/pmwiki/local/", "type": "bind" },
+  //            { "source": "${localWorkspaceFolder}/cookbook/", "target": "/var/www/html/pmwiki/cookbook/", "type": "bind" }],
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "xdebug.php-debug"
+      ]
+    }
+  }
+}

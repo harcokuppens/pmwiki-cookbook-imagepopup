@@ -1,0 +1,38 @@
+# docs: https://docs.docker.com/reference/compose-file/
+name: pmwiki
+services:
+  pmwiki:
+    build:
+      # context dir used in image build as root path for paths in Dockerfile
+      # Path relative to this file.
+      # https://docs.docker.com/reference/compose-file/build/#context
+      context: ../
+      # build with this Dockerfile ( path specified from context dir)
+      # https://docs.docker.com/reference/compose-file/build/#dockerfile
+      dockerfile: .devcontainer/pmwiki/Dockerfile
+      # uncomment next lines to change params used in Dockerfile to build pmwiki image
+      args:
+        PMWIKI_VERSION: "2.3.37" # newest version of pmwiki, not working with markup_e
+      #   PMWIKI_VERSION: '2.3.9' # old version still working with markup_e
+      #   PMWIKI_DIR: '/var/www/html/pmwiki' # install pmwiki in subdir
+    ports:
+      - "127.0.0.1:8080:80"
+      - "127.0.0.1:8443:443"
+    environment:
+      - COOKBOOK=${COOKBOOK}
+    volumes:
+      - type: bind
+        source: ../data/wiki.d/
+        target: /var/www/html/pmwiki/wiki.d/
+      - type: bind
+        source: ../data/uploads/
+        target: /var/www/html/pmwiki/uploads/
+      - type: bind
+        source: ../data/local/
+        target: /var/www/html/pmwiki/local/
+      - type: bind
+        source: ../data/cookbook/${COOKBOOK}
+        target: /var/www/html/pmwiki/cookbook/${COOKBOOK}
+      - type: bind
+        source: ../data/pub/${COOKBOOK}
+        target: /var/www/html/pmwiki/pub/${COOKBOOK}

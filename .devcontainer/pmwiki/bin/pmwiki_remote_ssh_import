@@ -1,0 +1,70 @@
+#!/bin/bash
+
+USAGE="
+USAGE 
+
+    pmwiki_remote_ssh_import USER@REMOTEHOST:REMOTEPMWIKIDIR
+
+DESCRIPTION
+
+    Mirror a remote site without overwriting the new cookbook we are locally developing.
+    The name of the new cookbook is determined from the COOKBOOK environment variable.
+    Your cookbook X can consist of directories pmwiki/cookbook/X/ and pmwiki/pub/X/. When
+    the remote site is mirrored we make sure that we keep these folders of your cookbook X,
+    because when mirroring from a remote side not having these folders they would get removed!
+    So what you finally get is the remote cookbook/ and pub/ folder with your cookbook folders
+    added.
+
+    The argument USER@REMOTEHOST:REMOTEPMWIKIDIR is an rsync remote location using the SSH protocol
+    to mirror the files.
+
+    This script's behavior:
+      - the name of your cookbook is taken from the COOKBOOK environment variable.
+      - the folder /var/www/html/pmwiki is taken as the local pmwiki folder into which data gets mirrored.
+      - files bigger then 0.5MB are skipped from mirroring
+"
+
+# TODO: a generic command
+#    pmwiki_remote_ssh_import_generic COOKBOOKNAME USER@REMOTEHOST:REMOTEPMWIKIDIR LOCALPMWIKIDIR
+
+# pmwiki_remote_ssh_import USER@REMOTEHOST:REMOTEPMWIKIDIR
+#   -> uses COOKBOOK environment variable as COOKBOOKNAME
+#   -> uses "/var/www/html/pmwiki" as LOCALPMWIKIDIR
+
+# set name of your cookbook folder
+mycookbookdir="$COOKBOOK"
+# set the remote ssh location to fetch pmwiki from
+#remotewiki="USER@REMOTEHOST:REMOTEDIR"
+
+if [[ "$#" != "1" ]]; then
+    echo "$USAGE"
+    exit 1
+fi
+
+if [[ -z "$COOKBOOK" ]]; then
+    echo "ERROR: unset COOKBOOK environment variable; it must be set to your cookbook's name!" 1>&2
+    echo "$USAGE" 1>&2
+    exit 1
+fi
+
+remotewiki="$1"
+
+# our local pmwiki directory
+localwikidir="/var/www/html/pmwiki"
+
+# mirror - https://github.com/harcokuppens/mirror
+#   Mirror synchronises contents of sourcedir into destdir which can be on a remote machine,
+#   a docker container, or on a docker image. Mirror wraps the rsync command to give it a
+#   simpler interface to ease mirror and diffdir operations.
+
+maxsize_half_mb="--rsync-options --max-size=0.5m"
+# mirror page data
+mirror --no-warn $maxsize_half_mb $remotewiki/wiki.d $localwikidir/wiki.d
+mirror --no-warn $maxsize_half_mb $remotewiki/uploads $localwikidir/uploads
+
+# mirror config and cookbooks
+# when  mirroring the cookbook and pub dirs we make sure that we keep the already
+# present $mycookbookdir; making sure your cookbook folder does not get removed!
+mirror --no-warn $maxsize_half_mb $remotewiki/local $localwikidir/local
+mirror --no-warn $maxsize_half_mb -f "- $mycookbookdir" $remotewiki/cookbook $localwikidir/cookbook
+mirror --no-warn $maxsize_half_mb -f "- $mycookbookdir" $remotewiki/pub $localwikidir/pub
