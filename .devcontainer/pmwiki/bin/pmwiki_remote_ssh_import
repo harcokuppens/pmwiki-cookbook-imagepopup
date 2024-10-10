@@ -61,6 +61,10 @@ localwikidir="/var/www/html/pmwiki"
 # - only allow files smaller then 0.5 MB
 # - set permissions right for our apache webserver which reads as other
 rsync_options='--max-size=0.5m --chmod=ugo-x,u=rw,g=rw,o=rw,Dugo+x'
+# note:
+#   $ umask -S
+#   u=rwx,g=rx,o=rx
+# rsync honors umask when creating file when mirroring, so group and other won't get the write permission I specified in rsync_options
 
 # mirror page data
 echo mirror --no-warn --rsync-options "$rsync_options" $remotewiki/wiki.d $localwikidir/wiki.d
