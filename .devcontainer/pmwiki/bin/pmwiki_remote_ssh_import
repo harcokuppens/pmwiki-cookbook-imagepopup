@@ -57,14 +57,19 @@ localwikidir="/var/www/html/pmwiki"
 #   a docker container, or on a docker image. Mirror wraps the rsync command to give it a
 #   simpler interface to ease mirror and diffdir operations.
 
-maxsize_half_mb="--rsync-options --max-size=0.5m"
+# when mirroring
+# - only allow files smaller then 0.5 MB
+# - set permissions right for our apache webserver which reads as other
+rsync_options='--max-size=0.5m --chmod=ugo-x,u=rw,g=rw,o=rw,Dugo+x'
+
 # mirror page data
-mirror --no-warn $maxsize_half_mb $remotewiki/wiki.d $localwikidir/wiki.d
-mirror --no-warn $maxsize_half_mb $remotewiki/uploads $localwikidir/uploads
+echo mirror --no-warn --rsync-options "$rsync_options" $remotewiki/wiki.d $localwikidir/wiki.d
+mirror --no-warn --rsync-options "$rsync_options" $remotewiki/wiki.d $localwikidir/wiki.d
+mirror --no-warn --rsync-options "$rsync_options" $remotewiki/uploads $localwikidir/uploads
 
 # mirror config and cookbooks
 # when  mirroring the cookbook and pub dirs we make sure that we keep the already
 # present $mycookbookdir; making sure your cookbook folder does not get removed!
-mirror --no-warn $maxsize_half_mb $remotewiki/local $localwikidir/local
-mirror --no-warn $maxsize_half_mb -f "- $mycookbookdir" $remotewiki/cookbook $localwikidir/cookbook
-mirror --no-warn $maxsize_half_mb -f "- $mycookbookdir" $remotewiki/pub $localwikidir/pub
+mirror --no-warn --rsync-options "$rsync_options" $remotewiki/local $localwikidir/local
+mirror --no-warn --rsync-options "$rsync_options" -f "- $mycookbookdir" $remotewiki/cookbook $localwikidir/cookbook
+mirror --no-warn --rsync-options "$rsync_options" -f "- $mycookbookdir" $remotewiki/pub $localwikidir/pub
