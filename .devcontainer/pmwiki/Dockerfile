@@ -193,6 +193,13 @@ ARG PMWIKI_DIR
 # Make persist in container as environment variables
 ENV PMWIKI_DIR="${PMWIKI_DIR}" 
 
+# # 0. add extra info file for info about used php server
+# COPY <<EOF "${PMWIKI_DIR}/../phpinfo.php"
+# <?php
+
+# // Show all information, defaults to INFO_ALL
+# phpinfo();
+# EOF
 
 # 1. copy pmwiki source 
 ARG PMWIKI_VERSION
@@ -251,8 +258,14 @@ EOF
 # only copy data from data folder as default data when binding not used.
 COPY ${REPO_DIR}/data  ${PMWIKI_DIR}/
 
-# 4. fix write permissions
-RUN  chmod -R a+rwX /var/www/html/
+# 4. fix owner and write permissions
+RUN chown -R www-data:www-data /var/www/html/
+RUN chmod -R a+rwX /var/www/html/
+
+# may you login as root to container via docker exec then we must be sure new files are rw by world, 
+# because otherwise www-data user cannot read/write it. We do this by setting umask 
+# for root user to 'u=rwx,g=rwx,o=rwx'. (files by default rw-rw-rw permission and directories rwxrwxrwx permission) 
+RUN echo "umask 000" >> /etc/profile
 
 # 5. install pmwiki-import script in container
 #      user can open terminal in container and can easily setup container to be exactly like a website in production;
@@ -365,8 +378,19 @@ COPY <<'EOF' /var/www/html/pmwiki/.vscode/launch.json
 }
 EOF
 
-
+#  fix owner and write permissions
+RUN chown -R www-data:www-data /var/www
+RUN chmod -R a+rwX /var/www
+# note: when vscode logs in as remoteUser `www-data` it writes its remote server
+#       files in /var/www/.vscode-server/ as the `www-data` user.
 
 WORKDIR  ${PMWIKI_DIR}
+
+# to make you login as www-data user (which has by default as shell /usr/sbin/nologin)
+RUN usermod -s /bin/bash www-data
+# # to make container runnable as user www-data; make private certificate readable for www-data user 
+RUN chmod -R a+rX /etc/ssl/private/
+# USER www-data
+# src: https://docs.docker.com/reference/dockerfile/#user
 
 

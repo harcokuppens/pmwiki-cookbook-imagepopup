@@ -59,12 +59,25 @@ localwikidir="/var/www/html/pmwiki"
 
 # when mirroring
 # - only allow files smaller then 0.5 MB
-# - set permissions right for our apache webserver which reads as other
+# - set permissions right for our apache webserver which reads as www-data user
 rsync_options='--max-size=0.5m --chmod=ugo-x,u=rw,g=rw,o=rw,Dugo+x'
 # note:
-#   $ umask -S
-#   u=rwx,g=rx,o=rx
-# rsync honors umask when creating file when mirroring, so group and other won't get the write permission I specified in rsync_options
+#   by default the default umask can give problems:
+#      $ umask -S
+#      u=rwx,g=rx,o=rx
+#   because rsync honors umask when creating file when mirroring, so group and other won't get the write permission I specified in rsync_options
+#   we fixed it by setting the umask by default to 'u=rwx,g=rwx,o=rwx'
+#   by adding the following line to the Dockerfile 
+#       RUN echo "umask 000" >> /etc/profile
+#   and in the Dockerfile we made everything withing the home directory of the www-data user `/var/www` owned and editable for this user  
+#     RUN chown -R www-data:www-data /var/www
+#     RUN chmod -R a+rwX /var/www
+#   note: we used the homedirectory /var/www/ because when vscode logs in as the
+#         www-data user in the container it then writes its remote server files within
+#         the folder /var/www/.vscode-server/
+#   and enabled the capability in the image to allow you to login as www-data user (which has by default as shell /usr/sbin/nologin)
+#     RUN usermod -s /bin/bash www-data
+
 
 # mirror page data
 echo mirror --no-warn --rsync-options "$rsync_options" $remotewiki/wiki.d $localwikidir/wiki.d

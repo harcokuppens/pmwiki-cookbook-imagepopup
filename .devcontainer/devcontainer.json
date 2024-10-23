@@ -20,6 +20,11 @@
   //            { "source": "${localWorkspaceFolder}/local/", "target": "/var/www/html/pmwiki/local/", "type": "bind" },
   //            { "source": "${localWorkspaceFolder}/cookbook/", "target": "/var/www/html/pmwiki/cookbook/", "type": "bind" }],
 
+  // https://github.com/devcontainers/spec/blob/main/docs/specs/devcontainerjson-reference.md
+  // use remoteUser to make vscode use that user to login to container, however container still runs under the user configure in Dockerfile/docker-compose.yml
+  "remoteUser": "www-data",
+  //"containerUser": "www-data", // set the user to run the container with; same as USER in Dockerfile or user in docker-compose.yml
+
   "customizations": {
     "vscode": {
       "extensions": [

@@ -3,7 +3,11 @@
 ## Description
 
 This repository defines a basic pmwiki installation in devcontainer which you can use
-to develop cookbook scripts. The following config files are used in the container
+to develop cookbook scripts. You can also use this repository as base to publish your
+cookbook with example pages. This allows you to directly view the cookbook in action
+using docker compose.
+
+The following config files are used in the container
 
 - `.devcontainer/.env`
 
@@ -74,6 +78,11 @@ to develop cookbook scripts. The following config files are used in the containe
   them in the container. As developer you can then easily place your cookbook script
   and test pages locally and use them in the container.
 
+  The container is run with the `root` user. This is the same as on a normal linux
+  distribution where the apache server is initially run as root to be able to open
+  the lower privilige ports, after which the apache server switches to the `www-data`
+  user.
+
 ## Setup your cookbook folder
 
 When starting to develop your cookbook make folders for it. Here an example for a
@@ -109,6 +118,18 @@ Then open in browser:
               or
      https://localhost:8443
 
+Because the `docker exec` command by default uses the user defined in `Dockerfile` or
+`docker-compose.yml` the following command will open a bash shell with the `root`
+user:
+
+    docker exec -it pmwiki-pmwiki-1 bash
+
+However, as explained above, the apache server and php code engine will operate using
+the `www-data` user. Hence, when editing via a bash shell one can better open the
+shell with the `www-data` user:
+
+    docker exec -it -u www-data pmwiki-pmwiki-1 bash
+
 ## Run by opening devcontainer with vscode
 
 In vscode you have `php` debugging support. Convenient if you want to develop a
@@ -127,6 +148,11 @@ you to "Reopen in Container". When you confirm then vscode will be opened in the
 container. Vscode will use as workspace folder `/var/www/html/pmwiki` inside the
 container.
 
+The devcontainer is setup to use the user `www-data` used by apache and php as the
+`remoteUser`. This setting makes the vscode editor to log in the container using the
+`www-data` user. Which means that the vscode editor uses the `www-data` when editing
+files making sure they can always be read by apache and php.
+
 Then open in browser:
 
      https://localhost:8080
@@ -134,7 +160,8 @@ Then open in browser:
      https://localhost:8443
 
 Within vscode you can then easily edit and debug php code. The `Dockerfile` for the
-container already buildin a `launch.json` for debugging with xdebug in vscode.
+container has already buildin a `launch.json` for debugging with xdebug within
+vscode. So everything is already setup to directly debug php code.
 
 ## Credentials
 
