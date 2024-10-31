@@ -26,7 +26,7 @@ You can view the logs with:
 
 Then open in browser:
 
-     https://localhost:8080
+     http://localhost:8080
               or
      https://localhost:8443
 
@@ -56,7 +56,7 @@ files making sure they can always be read by apache and php.
 
 Then open in browser:
 
-     https://localhost:8080
+     http://localhost:8080
               or
      https://localhost:8443
 
