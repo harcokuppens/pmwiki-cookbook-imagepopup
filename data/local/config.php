@@ -68,7 +68,7 @@ $EnableUpload = 1;
 #$UploadMaxSize =  8388608; # limit upload file size to 8 megabyte
 $UploadMaxSize = 31457280; # limit upload file size to 30 megabyte
 #$UploadPrefixFmt = '/$Group/$Name'; 
-$UploadPrefixFmt = '/$Group'; 
+$UploadPrefixFmt = '/$Group';
 
 # to allow larger uploads set in php.ini 
 #
@@ -85,11 +85,39 @@ $UploadExts['svgz'] = 'image/svg+xml';
 
 
 # following types are regarded as images
-$ImgExtPattern="\\.(?:svgz|svg|gif|jpg|jpeg|png|SVGZ|SVG|GIF|JPG|JPEG|PNG)";
+$ImgExtPattern = "\\.(?:svgz|svg|gif|jpg|jpeg|png|SVGZ|SVG|GIF|JPG|JPEG|PNG)";
 
+#-----------------------------------------------
+#  cookbook RecipeInfo
+#-----------------------------------------------
+
+# https://www.pmwiki.org/wiki/Cookbook/RecipeInfo
+# 
+# in page you need to define a wiki style:
+#
+#   %define=recipeinfo color=black background-color=#f7f7f7 border='1px solid #cccccc' padding=4px%
+#
+# in config you need to define:
+Markup(
+    '^Property:',
+    'block',
+    '/^([A-Z][-\\w]+):(\\s.*)?$/',
+    '<:block,0><div class=\'property-$1\'>$0</div>'
+);
+# then you can use  markup for describing cookbooks with syntax 
+//   >>recipeinfo<<
+//   Summary: How to create a recipeinfo box like it is used in the cookbook
+//   Version: 2007-02-26
+//   Prerequisites: pmwiki
+//   Status: stable
+//   Maintainer:
+//   Categories:
+//   (:if exists {$Name}-Talk:)Discussion: [[{$Name}-Talk]](:if:)
+//   >><<
 
 
 #-----------------------------------------------
 #  cookbook imagepopup
 #-----------------------------------------------
 @include_once("$FarmD/cookbook/imagepopup/imagepopup.php");
+
