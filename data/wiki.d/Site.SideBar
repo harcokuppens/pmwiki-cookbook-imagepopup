@@ -6,10 +6,19 @@ csum=
 host=172.19.0.1
 name=Site.SideBar
 passwdedit=@_site_edit
-rev=3
+rev=6
 targets=Main.HomePage,Cookbook.ImagePopup,Site.SideBar
-text=* [[Main/HomePage]]%0a* [[Cookbook/ImagePopup]]%0a%0a%0a%0a%25right%25 [-[[Site.SideBar?action=edit | edit SideBar]]-]
-time=1730389500
+text=* [[Main/HomePage]]%0a* [[Cookbook/ImagePopup| ImagePopup Cookbook]]%0a%0a%0a%0a%25right%25 [-[[Site.SideBar?action=edit | edit SideBar]]-]
+time=1730391036
+author:1730391036=admin
+diff:1730391036:1730391004:=2c2%0a%3c * [[Cookbook/ImagePopup| ImagePopup Cookbook]]%0a---%0a> * [[a Cookbook/ImagePopup]]%0a
+host:1730391036=172.19.0.1
+author:1730391004=admin
+diff:1730391004:1730390996:=2c2%0a%3c * [[a Cookbook/ImagePopup]]%0a---%0a> * [[a |Cookbook/ImagePopup]]%0a
+host:1730391004=172.19.0.1
+author:1730390996=admin
+diff:1730390996:1730389500:=2c2%0a%3c * [[a |Cookbook/ImagePopup]]%0a---%0a> * [[Cookbook/ImagePopup]]%0a
+host:1730390996=172.19.0.1
 author:1730389500=admin
 diff:1730389500:1730389436:=6c6%0a%3c %25right%25 [-[[Site.SideBar?action=edit | edit SideBar]]-]%0a\ No newline at end of file%0a---%0a> %25right%25 [-[[Main.SideBar?action=edit | edit SideBar]]-]%0a\ No newline at end of file%0a
 host:1730389500=172.19.0.1
