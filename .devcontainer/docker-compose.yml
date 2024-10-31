@@ -1,5 +1,5 @@
 # docs: https://docs.docker.com/reference/compose-file/
-name: pmwiki
+name: pmwiki-imagepopup
 services:
   pmwiki:
     build:

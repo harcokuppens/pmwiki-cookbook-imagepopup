@@ -1,0 +1,32 @@
+#image_popup{
+  position: absolute; 
+  box-sizing: border-box;
+
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+
+  display: none;
+}
+
+#image-show-area {
+  padding: 0px;
+}
+ 
+  
+.active{
+  filter: blur(5px);
+}
+
+
+#close-btn-area{
+  width: 100%;
+  text-align: right;
+  margin-bottom: 10px;
+}
+#close-btn-area button{
+  cursor: pointer;
+}
+  
+  
+  

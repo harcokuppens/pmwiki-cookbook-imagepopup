@@ -1,0 +1,86 @@
+version=pmwiki-2.3.37 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15
+author=admin
+charset=ISO-8859-1
+csum=
+host=172.19.0.1
+name=Main.HomePage
+rev=228
+targets=PmWiki.DocumentationIndex,PmWiki.InitialSetupTasks,PmWiki.BasicEditing,Main.WikiSandbox
+text=(:Summary:The default home page for the PmWiki distribution:)%0aWelcome to PmWiki!%0a%0aA local copy of PmWiki's%0adocumentation has been installed along with the software,%0aand is available via the [[PmWiki/documentation index]].  %0a%0aTo continue setting up PmWiki, see [[PmWiki/initial setup tasks]].%0a%0aThe [[PmWiki/basic editing]] page describes how to create pages%0ain PmWiki.  You can practice editing in the [[wiki sandbox]].%0a%0aMore information about PmWiki is available from [[https://www.pmwiki.org]].%0a%0a(:imagepopup class="popup" width="500" closebutton="false" padding="15" margin="5" wrapcount="0" :)%0a%0a%0a%0a%25apply=img class=popup width=200px%25\%0aAttach:person1.jpg \%0aAttach:person2.jpg \%0aAttach:person3.jpg \%0aAttach:person4.jpg \%0aAttach:person5.jpg \%0aAttach:person6.jpg \%0a%0a----%0a%0a%25width=200px class=popup%25 Attach:person1.jpg\%0a%25width=200px class=popup%25 Attach:person2.jpg\%0a%25width=200px class=popup%25 Attach:person3.jpg\%0a%25width=200px class=popup%25 Attach:person4.jpg\%0a%25width=200px class=popup%25 Attach:person5.jpg\%0a%25width=200px class=popup%25 Attach:person6.jpg%0a%0a%0a%0a%0a%0a%0a
+time=1730371236
+author:1730371236=admin
+diff:1730371236:1730371216:=27,28c27%0a%3c ----%0a%3c %0a---%0a> %3chr>%0a
+host:1730371236=172.19.0.1
+author:1730371216=admin
+diff:1730371216:1730371182:=27,30d26%0a%3c %3chr>%0a%3c %25width=200px class=popup%25 Attach:person1.jpg\%0a%3c %25width=200px class=popup%25 Attach:person2.jpg\%0a%3c %25width=200px class=popup%25 Attach:person3.jpg\%0a
+host:1730371216=172.19.0.1
+author:1730371182=admin
+diff:1730371182:1730371153:=22,25c22%0a%3c Attach:person3.jpg \%0a%3c Attach:person4.jpg \%0a%3c Attach:person5.jpg \%0a%3c Attach:person6.jpg \%0a---%0a> Attach:person3.jpg%0a
+host:1730371182=172.19.0.1
+author:1730371153=admin
+diff:1730371153:1730371107:=19,22c19,22%0a%3c %25apply=img class=popup width=200px%25\%0a%3c Attach:person1.jpg \%0a%3c Attach:person2.jpg \%0a%3c Attach:person3.jpg%0a---%0a> %25apply=img class=popup%25\%0a> %25width=200px%25 Attach:person1.jpg \%0a> %25width=200px%25 Attach:person2.jpg \%0a> %25width=200px%25 Attach:person3.jpg%0a
+host:1730371153=172.19.0.1
+author:1730371107=admin
+diff:1730371107:1730371091:=25c25%0a%3c %25width=200px class=popup%25 Attach:person5.jpg\%0a---%0a> %25width=200px class=popup%25 Attach:person5.jpg%0a
+host:1730371107=172.19.0.1
+author:1730371091=admin
+diff:1730371091:1730371016:=24,29c24,27%0a%3c %25width=200px class=popup%25 Attach:person4.jpg\%0a%3c %25width=200px class=popup%25 Attach:person5.jpg%0a%3c %25width=200px class=popup%25 Attach:person6.jpg%0a%3c %0a%3c %0a%3c %0a---%0a> %25width=200px class=popup%25 Attach:person4.jpg %25width=200px class=popup%25 Attach:person5.jpg %25width=200px class=popup%25 Attach:person6.jpg%0a> %0a> %0a> %25width=200px class=popup%25 Attach:person4.jpg  Attach:person5.jpg %25width=200px%25 Attach:person6.jpg%0a
+host:1730371091=172.19.0.1
+author:1730371016=admin
+diff:1730371016:1730370965:=24,30c24%0a%3c %25width=200px class=popup%25 Attach:person4.jpg %25width=200px class=popup%25 Attach:person5.jpg %25width=200px class=popup%25 Attach:person6.jpg%0a%3c %0a%3c %0a%3c %25width=200px class=popup%25 Attach:person4.jpg  Attach:person5.jpg %25width=200px%25 Attach:person6.jpg%0a%3c %0a%3c %0a%3c %0a---%0a> %25width=200px class=popup%25 Attach:person4.jpg %25width=200px class=popup%25 Attach:person5.jpg %25width=200px class=popup%25 Attach:person6.jpg%0a\ No newline at end of file%0a
+host:1730371016=172.19.0.1
+author:1730370965=admin
+diff:1730370965:1730370937:=24c24,26%0a%3c %25width=200px class=popup%25 Attach:person4.jpg %25width=200px class=popup%25 Attach:person5.jpg %25width=200px class=popup%25 Attach:person6.jpg%0a\ No newline at end of file%0a---%0a> %25width=200px class=popup%25 Attach:person3.jpg%0a> %25width=200px class=popup%25 Attach:person3.jpg%0a> %25width=200px class=popup%25 Attach:person3.jpg%0a\ No newline at end of file%0a
+host:1730370965=172.19.0.1
+author:1730370937=admin
+diff:1730370937:1730370907:=20,26c20,24%0a%3c %25width=200px%25 Attach:person1.jpg \%0a%3c %25width=200px%25 Attach:person2.jpg \%0a%3c %25width=200px%25 Attach:person3.jpg%0a%3c %0a%3c %25width=200px class=popup%25 Attach:person3.jpg%0a%3c %25width=200px class=popup%25 Attach:person3.jpg%0a%3c %25width=200px class=popup%25 Attach:person3.jpg%0a\ No newline at end of file%0a---%0a> %25width=300px%25 Attach:person1.jpg \%0a> %25width=300px%25 Attach:person2.jpg \%0a> %25width=300px%25 Attach:person3.jpg%0a> %0a> %25width=300px class=popup%25 Attach:person3.jpg%0a\ No newline at end of file%0a
+host:1730370937=172.19.0.1
+author:1730370907=admin
+diff:1730370907:1730370824:=15c15%0a%3c (:imagepopup class="popup" width="500" closebutton="false" padding="15" margin="5" wrapcount="0" :)%0a---%0a> (:imagepopup class="popup" width="600" closebutton="false" padding="15" margin="5" wrapcount="0" :)%0a
+host:1730370907=172.19.0.1
+author:1730370824=admin
+diff:1730370824:1730370700:=15c15%0a%3c (:imagepopup class="popup" width="600" closebutton="false" padding="15" margin="5" wrapcount="0" :)%0a---%0a> (:imagepopup class="popup" width="600" closebutton="false" padding="15" margin="5" wrapcount="2" :)%0a
+host:1730370824=172.19.0.1
+author:1730370700=admin
+diff:1730370700:1730370652:=15,19c15,19%0a%3c (:imagepopup class="popup" width="600" closebutton="false" padding="15" margin="5" wrapcount="2" :)%0a%3c %0a%3c %0a%3c %0a%3c %25apply=img class=popup%25\%0a---%0a> (:imagepopup class="left" width="600" closebutton="false" padding="15" margin="5" wrapcount="2" :)%0a> %0a> %0a> %0a> %25apply=img class=left%25\%0a24c24%0a%3c %25width=300px class=popup%25 Attach:person3.jpg%0a\ No newline at end of file%0a---%0a> %25width=300px%25 Attach:person3.jpg%0a\ No newline at end of file%0a
+host:1730370700=172.19.0.1
+author:1730370652=admin
+diff:1730370652:1730370622:=15c15%0a%3c (:imagepopup class="left" width="600" closebutton="false" padding="15" margin="5" wrapcount="2" :)%0a---%0a> (:imagepopup class="left" width="300" closebutton="false" padding="15" margin="5" wrapcount="2" :)%0a
+host:1730370652=172.19.0.1
+author:1730370622=admin
+diff:1730370622:1730370586:=15c15%0a%3c (:imagepopup class="left" width="300" closebutton="false" padding="15" margin="5" wrapcount="2" :)%0a---%0a> (:imagepopup class="left" width="400" closebutton="false" padding="15" margin="5" wrapcount="2" :)%0a
+host:1730370622=172.19.0.1
+author:1730370586=admin
+diff:1730370586:1730370554:=22,23d21%0a%3c %25width=300px%25 Attach:person3.jpg%0a%3c %0a
+host:1730370586=172.19.0.1
+author:1730370554=admin
+diff:1730370554:1730370511:=19,20c19%0a%3c %25apply=img class=left%25\%0a%3c %25width=300px%25 Attach:person1.jpg \%0a---%0a> %25apply=img class=left width=300px%25 Attach:person1.jpg \%0a
+host:1730370554=172.19.0.1
+author:1730370511=admin
+diff:1730370511:1730370464:=15,19c15,19%0a%3c (:imagepopup class="left" width="400" closebutton="false" padding="15" margin="5" wrapcount="2" :)%0a%3c %0a%3c %0a%3c %0a%3c %25apply=img class=left width=300px%25 Attach:person1.jpg \%0a---%0a> (:imagepopup class="img" width="400" closebutton="false" padding="15" margin="5" wrapcount="2" :)%0a> %0a> %25apply=img class=left%25%0a> %0a> %25width=300px%25 Attach:person1.jpg \%0a
+host:1730370511=172.19.0.1
+author:1730370464=admin
+diff:1730370464:1730370440:=15c15%0a%3c (:imagepopup class="img" width="400" closebutton="false" padding="15" margin="5" wrapcount="2" :)%0a---%0a> (:imagepopup class="left" width="400" closebutton="false" padding="15" margin="5" wrapcount="2" :)%0a
+host:1730370464=172.19.0.1
+author:1730370440=admin
+diff:1730370440:1730370388:=19c19%0a%3c %25width=300px%25 Attach:person1.jpg \%0a---%0a> %25width=300px class=left%25 Attach:person1.jpg \%0a
+host:1730370440=172.19.0.1
+author:1730370388=admin
+diff:1730370388:1730369537:=17d16%0a%3c %25apply=img class=left%25%0a
+host:1730370388=172.19.0.1
+author:1730369537=admin
+diff:1730369537:1730369303:=15c15%0a%3c (:imagepopup class="left" width="400" closebutton="false" padding="15" margin="5" wrapcount="2" :)%0a---%0a> (:imagepopup class="img" width="400" closebutton="false" padding="15" margin="5" wrapcount="2" :)%0a
+host:1730369537=172.19.0.1
+author:1730369303=admin
+diff:1730369303:1730369223:=15c15%0a%3c (:imagepopup class="img" width="400" closebutton="false" padding="15" margin="5" wrapcount="2" :)%0a---%0a> (:imagepopup class="left" width="400" closebutton="false" padding="15" margin="5" wrapcount="2" :)%0a
+host:1730369303=172.19.0.1
+author:1730369223=admin
+diff:1730369223:1730368509:=18c18%0a%3c %25width=300px class=left%25 Attach:person1.jpg \%0a---%0a> %25width=300px%25 Attach:person1.jpg \%0a
+host:1730369223=172.19.0.1
+author:1730368509=admin
+diff:1730368509:1730368149:=
+host:1730368509=172.19.0.1
+author:1730368149=admin
+diff:1730368149:1400472661:=14,20d13%0a%3c %0a%3c (:imagepopup class="left" width="400" closebutton="false" padding="15" margin="5" wrapcount="2" :)%0a%3c %0a%3c %0a%3c %25width=300px%25 Attach:person1.jpg \%0a%3c %25width=300px%25 Attach:person2.jpg \%0a%3c %25width=300px%25 Attach:person3.jpg%0a\ No newline at end of file%0a
+host:1730368149=172.19.0.1
