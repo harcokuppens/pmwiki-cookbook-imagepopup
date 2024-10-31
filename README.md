@@ -6,7 +6,7 @@ The ImagePopup cookbook is a plugin for PmWiki which after including an (:imagep
 
 The details of the ImagePopup cookbook are described on the [ImagePopup cookbook's description page](https://www.pmwiki.org/wiki/Cookbook/ImagePopup). 
 The source code of the ImagePopup plugin is at https://github.com/harcokuppens/pmwiki-cookbook-imagepopup/, which also provides
-a devcontainer in which you can see the plugin in action and further develop it.
+a devcontainer in which you can see the plugin in action and further develop it. The devcontainer is based on the basic pmwiki devcontainer at https://github.com/harcokuppens/pmwiki-basic.
 
 ## Devcontainer
 
