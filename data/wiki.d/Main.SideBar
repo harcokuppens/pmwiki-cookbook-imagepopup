@@ -1,0 +1,15 @@
+version=pmwiki-2.3.37 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15
+author=admin
+charset=ISO-8859-1
+csum=
+ctime=1730707587
+host=172.19.0.1
+name=Main.SideBar
+rev=1
+targets=Main.HomePage,Main.ImagePopup,Main.SideBar
+text=* [[Main/HomePage]]%0a* [[Main/ImagePopup| ImagePopup Cookbook]]%0a%0a%25right%25 [-[[Main.SideBar?action=edit | edit SideBar]]-]
+time=1730707587
+author:1730707587=admin
+diff:1730707587:1730707587:=1,4d0%0a%3c * [[Main/HomePage]]%0a%3c * [[Main/ImagePopup| ImagePopup Cookbook]]%0a%3c %0a%3c %25right%25 [-[[Main.SideBar?action=edit | edit SideBar]]-]%0a\ No newline at end of file%0a
+host:1730707587=172.19.0.1
