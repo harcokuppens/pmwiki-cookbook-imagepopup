@@ -122,8 +122,10 @@ to the container for direct usage within the container.
 - `pmwiki_remote_ssh_import` `USER@REMOTEHOST:REMOTEPMWIKIDIR`
 
   Mirror a remote site without overwriting the new cookbook we are locally developing.
-  **Run this script from a shell in your container.** Its full documentation is given
-  when run without arguments:
+  **Run this script from a shell in your container.**  This can be useful to test a new
+  cookbook within an existing wiki site.
+
+  The full documentation of `pmwiki_remote_ssh_import` is given when run without arguments:
 
       $ pmwiki_mirror_remote_site
       USAGE 
