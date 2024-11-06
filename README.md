@@ -123,6 +123,53 @@ to the container for direct usage within the container.
 
   **Run this script from a shell in your container.**
 
+
+        USAGE 
+
+            pmwiki_mirror_remote_site [-d SUBDIR]* [-c COOKBOOKNAME]* [-s MAXSIZE] [-l LOCALPMWIKIDIR]  USER@REMOTEHOST:REMOTEPMWIKIDIR 
+
+        DESCRIPTION
+
+            Mirror a remote site without overwriting the new cookbook we are locally developing.
+            In that way we can test our cookbook within the remote setup and data.
+
+            The local site could have a different pmwiki install as the remote site.
+            We can use this to test the remote site in a new pmwiki version.
+            Only added items to an original pmwiki installation are mirrored. That is only the 
+            configuration, cookbook extensions,  the wiki pages and its uploads are
+            mirrored from the remote site. The means we mirror only the subfolders local/, cookbook/,
+            wiki.d/, uploads/ and pub/.
+
+            The name of the new cookbook is determined from the COOKBOOK environment variable.
+            Your cookbook X can consist of directories pmwiki/cookbook/X/ and pmwiki/pub/X/. When
+            the remote site is mirrored we make sure that we keep these folders of your cookbook X,
+            because when mirroring from a remote side not having these folders they would get removed!
+            So what you finally get is the remote cookbook/ and pub/ folder with your cookbook folders
+            added.
+
+            The argument USER@REMOTEHOST:REMOTEPMWIKIDIR is an rsync remote location using the SSH protocol
+            to mirror the files.
+
+            This script's behavior:
+              - the name of your cookbook is taken from the COOKBOOK environment variable.
+              - the folder /var/www/html/pmwiki is taken as the local pmwiki folder into which data gets mirrored.
+              - files bigger then 0.5MB are skipped from mirroring
+
+            Options:
+    
+             -d SUBDIR
+                Add extra sub directory in remote location to be mirrored. Multiple -d options may be specified.
+             -c COOKBOOKNAME
+                Specify a cookbook to excluded from mirroring. By default the value from the COOKBOOK environment 
+                variable is taken, but is ignored if this option is given. Multiple -c options may be specified. 
+             -s MAXSIZE 
+                Files with this size or larger are not mirrored. Default MAXSIZE=0.5m (half megabyte).
+                With MAXSIZE=0 then all files are mirrored.  
+             -l LOCALPMWIKIDIR 
+                Specifiy a different location for the local PmWiki directory. Default is /var/www/html/pmwiki.
+  
+
+
   Mirror a remote site without overwriting the new cookbook we are locally
   developing. The name of the new cookbook is determined from the `COOKBOOK`
   environment variable. Your cookbook `X` can consist of directories
