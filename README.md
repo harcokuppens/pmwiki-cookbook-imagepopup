@@ -103,3 +103,43 @@ user. Hence, when editing via a bash shell one can better open the shell with th
 `www-data` user:
 
     docker exec -it -u www-data pmwiki-imagepopup-1 bash
+
+
+
+## Helper scripts
+
+Helper scripts available in the `bin/` directory of this repository, but also builtin
+to the container for direct usage within the container.
+
+- `pmwiki_exportfile` `INPUTFILE` `OUTPUTFILE`
+
+  Exports latest source of wikipage `INPUTFILE` as text in `OUTPUTFILE`.
+
+- `pmwiki_importfile` `INPUTFILE` `OUTPUTFILE`
+
+  Imports text content of `INPUTFILE` as a wikipage in `OUTPUTFILE`.
+
+- `pmwiki_remote_ssh_import` `USER@REMOTEHOST:REMOTEPMWIKIDIR`
+
+  **Run this script from a shell in your container.**
+
+  Mirror a remote site without overwriting the new cookbook we are locally
+  developing. The name of the new cookbook is determined from the `COOKBOOK`
+  environment variable. Your cookbook `X` can consist of directories
+  `pmwiki/cookbook/X/` and `pmwiki/pub/X/`. When the remote site is mirrored we make
+  sure that we keep these folders of your cookbook `X`, because when mirroring from a
+  remote side not having these folders they would get removed! So what you finally
+  get is the remote `cookbook/` and `pub/` folder with your cookbook folders added.
+
+  The argument `USER@REMOTEHOST:REMOTEPMWIKIDIR` is an rsync remote location using
+  the SSH protocol to mirror the files.
+
+  This script's behavior:
+
+  - the name of your cookbook is taken from the COOKBOOK environment variable.
+  - the folder /var/www/html/pmwiki is taken as the local pmwiki folder into which
+    data gets mirrored.
+  - files bigger then 0.5MB are skipped from mirroring
+
+  Using this script we can easily check whether your new cookbook also works in an
+  existing production site.    
