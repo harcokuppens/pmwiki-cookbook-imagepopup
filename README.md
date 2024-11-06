@@ -82,9 +82,9 @@ The following folders will be binded into the container:
 - `wiki.d` for wiki pages
 - `uploads`: for attachments/pictures in pages
 - `local`: for the `local.php` configuration file
-- `cookbook/${CONFIG_COOKBOOK_NAME_LC}`: for binding only my cookbook's `php`
+- `cookbook/imagepopup`: for binding only my cookbook's `php`
   script(s)
-- `pub/${CONFIG_COOKBOOK_NAME_LC}`: for binding only my cookbook's `pub` file(s)
+- `pub/imagepopup`: for binding only my cookbook's `pub` file(s)
 
 Only the cookbook subdirectory is mounted, because as developer you are only
 interested in that specific cookbook. Next to that the `pub/` directory also
