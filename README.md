@@ -145,7 +145,9 @@ to the container for direct usage within the container.
 
   Mirror a remote site without overwriting the new cookbook we are locally
   developing. **Run this script from a shell in your container.** This can be useful
-  to test a new cookbook within an existing wiki site.
+  to test a new cookbook within an existing wiki site. Advised is to run this script
+  in a terminal within vscode, because
+  [vscode automatically forwards your local SSH agent if one is running](https://code.visualstudio.com/remote/advancedcontainers/sharing-git-credentials).
 
   The full documentation of `pmwiki_mirror_remote_site` is given when run without
   arguments:
