@@ -101,7 +101,7 @@ remotewiki="$1"
 if [[ "$max_size" == 0 ]]; then
     rsync_options="--chmod=ugo-x,u=rw,g=rw,o=rw,Dugo+x"
 else
-    rsync_options="--max-size='$max_size' --chmod=ugo-x,u=rw,g=rw,o=rw,Dugo+x"
+    rsync_options="--max-size=$max_size --chmod=ugo-x,u=rw,g=rw,o=rw,Dugo+x"
 fi
 # note:
 #   by default the default umask can give problems:
