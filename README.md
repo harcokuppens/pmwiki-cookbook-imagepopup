@@ -97,6 +97,11 @@ Only the cookbook subdirectory is mounted, because as developer you are only
 interested in that specific cookbook. Next to that the `pub/` directory also
 containers files installed by PmWiki which you do not want to mess with.
 
+For more details about how the devcontainer is configured see the
+[container-configuration-files section](https://github.com/harcokuppens/pmwiki-basic/blob/main/README.md#container-configuration-files)
+in the [pmwiki-basic repository](https://github.com/harcokuppens/pmwiki-basic/) on
+which this repository is based.
+
 ### Open bash shell in container
 
 Because the `docker exec` command by default uses the user defined in `Dockerfile` or
