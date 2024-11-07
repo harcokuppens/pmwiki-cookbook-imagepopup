@@ -13,12 +13,6 @@
   
   // Open the sub-folder with the source code
   "workspaceFolder": "/var/www/html/pmwiki",
-  //
-  //NOTE:  "workspaceMount" not used for docker-compose, instead use "mounts"
-  // "mounts": [{ "source": "${localWorkspaceFolder}/wiki.d/", "target": "/var/www/html/pmwiki/wiki.d/", "type": "bind" },
-  //            { "source": "${localWorkspaceFolder}/uploads/", "target": "/var/www/html/pmwiki/uploads/", "type": "bind" },
-  //            { "source": "${localWorkspaceFolder}/local/", "target": "/var/www/html/pmwiki/local/", "type": "bind" },
-  //            { "source": "${localWorkspaceFolder}/cookbook/", "target": "/var/www/html/pmwiki/cookbook/", "type": "bind" }],
 
   // https://github.com/devcontainers/spec/blob/main/docs/specs/devcontainerjson-reference.md
   // use remoteUser to make vscode use that user to login to container, however container still runs under the user configure in Dockerfile/docker-compose.yml
