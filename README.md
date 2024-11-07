@@ -1,12 +1,25 @@
-# ImagePopup cookbook for PmWiki 
+# ImagePopup cookbook for PmWiki
 
 ## Description
 
-The ImagePopup cookbook is a plugin for PmWiki which after including an (:imagepopup:) directive in a wiki page gives you automatically image popups for images on a wiki page. That is when you click on an image it will open a larger popup window with the image allowing you to take a better look at the image. The popup of the image is intelligently placed such that it doesn't overlay the original image or doesn't overlap a specified surrounding box around the image so that info around the image is kept visible. Eg. see the example below where the popup does not overlap the text beside the image. If you click on another image the old popup window is removed and a new one is opened. You can also close the popup window by clicking on the image again or by clicking on the popup window.
+The ImagePopup cookbook is a plugin for PmWiki which after including an
+(:imagepopup:) directive in a wiki page gives you automatically image popups for
+images on a wiki page. That is when you click on an image it will open a larger popup
+window with the image allowing you to take a better look at the image. The popup of
+the image is intelligently placed such that it doesn't overlay the original image or
+doesn't overlap a specified surrounding box around the image so that info around the
+image is kept visible. Eg. see the example below where the popup does not overlap the
+text beside the image. If you click on another image the old popup window is removed
+and a new one is opened. You can also close the popup window by clicking on the image
+again or by clicking on the popup window.
 
-The details of the ImagePopup cookbook are described on the [ImagePopup cookbook's description page](https://www.pmwiki.org/wiki/Cookbook/ImagePopup). 
-The source code of the ImagePopup plugin is at https://github.com/harcokuppens/pmwiki-cookbook-imagepopup/, which also provides
-a devcontainer in which you can see the plugin in action and further develop it. The devcontainer is based on the basic pmwiki devcontainer at https://github.com/harcokuppens/pmwiki-basic.
+The details of the ImagePopup cookbook are described on
+[the ImagePopup cookbook's recipe page](https://www.pmwiki.org/wiki/Cookbook/ImagePopup).
+The source code of this cookbook is at
+[the ImagePopup cookbook's repository](https://github.com/harcokuppens/pmwiki-cookbook-imagepopup),
+which also provides a devcontainer in which you can see the plugin in action and
+further develop it. The devcontainer is based on the basic pmwiki devcontainer at
+https://github.com/harcokuppens/pmwiki-basic.
 
 ## Quickstart to view cookbook in action
 
@@ -89,8 +102,7 @@ The following folders will be binded into the container:
 - `wiki.d` for wiki pages
 - `uploads`: for attachments/pictures in pages
 - `local`: for the `local.php` configuration file
-- `cookbook/imagepopup`: for binding only my cookbook's `php`
-  script(s)
+- `cookbook/imagepopup`: for binding only my cookbook's `php` script(s)
 - `pub/imagepopup`: for binding only my cookbook's `pub` file(s)
 
 Only the cookbook subdirectory is mounted, because as developer you are only
@@ -185,4 +197,3 @@ to the container for direct usage within the container.
 
   By default the name of the cookbook is determined from the `COOKBOOK` environment
   variable, which by default is already set inside the containers environment.
-
