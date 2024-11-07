@@ -57,6 +57,17 @@ $ScriptUrl = dirname(dirname($ScriptUrl));
 
 
 #-----------------------------------------------
+#  debug/info 
+#-----------------------------------------------
+#
+# http://www.pmwiki.org/wiki/PmWiki/DebugVariables
+$EnableDiag = 1;  # disable(0) in production
+## The following actions are available only if you set $EnableDiag = 1;
+#   ?action=ruleset  : displays a list of all markups
+#   ?action=phpinfo  : phpinfo()
+#   ?action=diag     : displays a dump of all global vars
+
+#-----------------------------------------------
 #  images and uploads
 #-----------------------------------------------
 
@@ -117,7 +128,6 @@ Markup(
 
 
 #-----------------------------------------------
-#  cookbook imagepopup
+#  cookbook  
 #-----------------------------------------------
-@include_once("$FarmD/cookbook/imagepopup/imagepopup.php");
-
+@include_once("$FarmD/local/includecookbook.php");
