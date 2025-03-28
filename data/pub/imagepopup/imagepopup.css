@@ -1,5 +1,5 @@
-#image_popup{
-  position: absolute; 
+#image_popup {
+  position: absolute;
   box-sizing: border-box;
 
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -12,21 +12,19 @@
 #image-show-area {
   padding: 0px;
 }
- 
-  
-.active{
+
+
+.active img {
   filter: blur(5px);
 }
 
 
-#close-btn-area{
+#close-btn-area {
   width: 100%;
   text-align: right;
   margin-bottom: 10px;
 }
-#close-btn-area button{
+
+#close-btn-area button {
   cursor: pointer;
 }
-  
-  
-  
