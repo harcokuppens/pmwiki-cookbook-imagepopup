@@ -9,10 +9,41 @@ window with the image allowing you to take a better look at the image. The origi
 smaller image is blurred, to make you focus on the larger image. The popup of the
 image is intelligently placed such that it doesn't overlay the original image or
 doesn't overlap a specified surrounding box around the image so that info around the
-image is kept visible. Eg. see the example below where the popup does not overlap the
-text beside the image. If you click on another image the old popup window is removed
+image is kept visible. If you click on another image the old popup window is removed
 and a new one is opened. You can also close the popup window by clicking on the image
 again or by clicking on the popup window.
+
+Below we show an example where we show a browser window once without a popup, then
+after clicking on the picture of person 1, then person 2, and finally on person 3.
+Notice that the popup never does overlap the text beside the image, so that it is
+kept readable. Also notice that only the image clicked on is blurred.
+
+<small><b> credits: picture from
+<a href="https://www.freepik.com/free-photo/people-collage-design_12976943.htm">freepik</a>
+</b></small>
+
+<table style="border-spacing: 30px;">
+<tr>
+<td style="border: 2px solid black;">
+<b> No popup </b><br>
+<img src="pictures/none.jpg" alt="no popup" /> 
+</td>
+<td style="border: 2px solid black;">
+<b> Person 1 popup </b><br>
+<img src="pictures/person1.jpg" alt="person1 popup" /> 
+</td>
+</tr>
+<tr>
+<td style="border: 2px solid black;">
+<b> Person 2 popup </b><br>
+<img src="pictures/person2.jpg" alt="person2 popup" /> 
+</td>
+<td style="border: 2px solid black;">
+<b> Person 3 popup </b><br>
+<img src="pictures/person3.jpg" alt="person3 popup" /> 
+</td>
+</tr>
+</table>
 
 The details of the ImagePopup cookbook are described on
 [the ImagePopup cookbook's recipe page](https://www.pmwiki.org/wiki/Cookbook/ImagePopup).
