@@ -5,8 +5,9 @@
 The ImagePopup cookbook is a plugin for PmWiki which after including an
 (:imagepopup:) directive in a wiki page gives you automatically image popups for
 images on a wiki page. That is when you click on an image it will open a larger popup
-window with the image allowing you to take a better look at the image. The popup of
-the image is intelligently placed such that it doesn't overlay the original image or
+window with the image allowing you to take a better look at the image. The original
+smaller image is blurred, to make you focus on the larger image. The popup of the
+image is intelligently placed such that it doesn't overlay the original image or
 doesn't overlap a specified surrounding box around the image so that info around the
 image is kept visible. Eg. see the example below where the popup does not overlap the
 text beside the image. If you click on another image the old popup window is removed
